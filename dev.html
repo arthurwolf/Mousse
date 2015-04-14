@@ -91,6 +91,8 @@
                 
                    <script src="./modules/gui/libs/validator.js"></script> 
                 
+                   <script src="./modules/gui/libs/bootbox/js/bootbox.min.js"></script> 
+                
                    <script src="./modules/gui/module.js"></script> 
             
                 
@@ -326,48 +328,21 @@
                  
             
                 
+                    <div id="gui-body" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-body").load( "./modules/gui/assets/body.html" );
+                            </script> 
+                           gui-body
+                         
+                    </div>
+                
                     <div id="gui-navigation" class="wholescreen">
                         
                             <script type="text/javascript">
                                 $("#gui-navigation").load( "./modules/gui/core/navigation/assets/navigation.html" );
                             </script> 
                            gui-navigation
-                         
-                    </div>
-                
-                    <div id="gui-modal" class="wholescreen">
-                        
-                            <script type="text/javascript">
-                                $("#gui-modal").load( "./modules/gui/modals/dropboxconnectmodal/assets/modal.html" );
-                            </script> 
-                           gui-modal
-                         
-                    </div>
-                
-                    <div id="gui-modal" class="wholescreen">
-                        
-                            <script type="text/javascript">
-                                $("#gui-modal").load( "./modules/gui/modals/networkdetectmodal/assets/modal.html" );
-                            </script> 
-                           gui-modal
-                         
-                    </div>
-                
-                    <div id="gui-motion_panel" class="wholescreen">
-                        
-                            <script type="text/javascript">
-                                $("#gui-motion_panel").load( "./modules/gui/screens/machineconfigurationscreen/assets/motion_panel.html" );
-                            </script> 
-                           gui-motion_panel
-                         
-                    </div>
-                
-                    <div id="gui-main" class="wholescreen">
-                        
-                            <script type="text/javascript">
-                                $("#gui-main").load( "./modules/gui/screens/machineconfigurationscreen/assets/main.html" );
-                            </script> 
-                           gui-main
                          
                     </div>
                 
@@ -386,6 +361,24 @@
                                 $("#gui-basic_panel").load( "./modules/gui/screens/machineconfigurationscreen/assets/basic_panel.html" );
                             </script> 
                            gui-basic_panel
+                         
+                    </div>
+                
+                    <div id="gui-motion_panel" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-motion_panel").load( "./modules/gui/screens/machineconfigurationscreen/assets/motion_panel.html" );
+                            </script> 
+                           gui-motion_panel
+                         
+                    </div>
+                
+                    <div id="gui-main" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-main").load( "./modules/gui/screens/machineconfigurationscreen/assets/main.html" );
+                            </script> 
+                           gui-main
                          
                     </div>
                 
@@ -425,12 +418,21 @@
                          
                     </div>
                 
-                    <div id="gui-body" class="wholescreen">
+                    <div id="gui-modal" class="wholescreen">
                         
                             <script type="text/javascript">
-                                $("#gui-body").load( "./modules/gui/assets/body.html" );
+                                $("#gui-modal").load( "./modules/gui/modals/networkdetectmodal/assets/modal.html" );
                             </script> 
-                           gui-body
+                           gui-modal
+                         
+                    </div>
+                
+                    <div id="gui-modal" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-modal").load( "./modules/gui/modals/dropboxconnectmodal/assets/modal.html" );
+                            </script> 
+                           gui-modal
                          
                     </div>
                  
@@ -502,24 +504,6 @@
                  
             
                 
-                    <div id="machineconfigurationscreen-motion_panel" class="wholescreen">
-                        
-                            <script type="text/javascript">
-                                $("#machineconfigurationscreen-motion_panel").load( "./modules/gui/screens/machineconfigurationscreen/assets/motion_panel.html" );
-                            </script> 
-                           machineconfigurationscreen-motion_panel
-                         
-                    </div>
-                
-                    <div id="machineconfigurationscreen-main" class="wholescreen">
-                        
-                            <script type="text/javascript">
-                                $("#machineconfigurationscreen-main").load( "./modules/gui/screens/machineconfigurationscreen/assets/main.html" );
-                            </script> 
-                           machineconfigurationscreen-main
-                         
-                    </div>
-                
                     <div id="machineconfigurationscreen-wizard_calculator" class="wholescreen">
                         
                             <script type="text/javascript">
@@ -535,6 +519,24 @@
                                 $("#machineconfigurationscreen-basic_panel").load( "./modules/gui/screens/machineconfigurationscreen/assets/basic_panel.html" );
                             </script> 
                            machineconfigurationscreen-basic_panel
+                         
+                    </div>
+                
+                    <div id="machineconfigurationscreen-motion_panel" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#machineconfigurationscreen-motion_panel").load( "./modules/gui/screens/machineconfigurationscreen/assets/motion_panel.html" );
+                            </script> 
+                           machineconfigurationscreen-motion_panel
+                         
+                    </div>
+                
+                    <div id="machineconfigurationscreen-main" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#machineconfigurationscreen-main").load( "./modules/gui/screens/machineconfigurationscreen/assets/main.html" );
+                            </script> 
+                           machineconfigurationscreen-main
                          
                     </div>
                  
