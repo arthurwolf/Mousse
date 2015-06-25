@@ -57,7 +57,19 @@
             
                 
                 
+                   <script src="./modules/gui/screens/controlscreen/widgtes/printstatuswidget/module.js"></script> 
+            
+                
+                
                    <script src="./modules/machines/robot/module.js"></script> 
+            
+                
+                
+                   <script src="./modules/gui/screens/controlscreen/widgtes/temperaturecontrolwidget/module.js"></script> 
+            
+                
+                
+                   <script src="./modules/gui/screens/controlscreen/widgtes/temperaturewidget/module.js"></script> 
             
                 
                 
@@ -67,7 +79,23 @@
             
                 
                 
+                   <script src="./modules/gui/screens/controlscreen/widgtes/widgetcontroller/module.js"></script> 
+            
+                
+                
+                   <script src="./modules/gui/screens/controlscreen/widgtes/consolewidget/module.js"></script> 
+            
+                
+                
                    <script src="./modules/communication/dropboxclient/module.js"></script> 
+            
+                
+                
+                   <script src="./modules/gui/screens/controlscreen/widgtes/extrusionwidget/module.js"></script> 
+            
+                
+                
+                   <script src="./modules/gui/screens/controlscreen/widgtes/fancontrolwidget/module.js"></script> 
             
                 
                    <link rel="stylesheet" href="./modules/gui/libs/bootstrap/css/bootstrap.css">
@@ -91,7 +119,13 @@
                 
                    <script src="./modules/gui/libs/validator.js"></script> 
                 
+                   <script src="./modules/gui/libs/bootbox/js/bootbox.min.js"></script> 
+                
                    <script src="./modules/gui/module.js"></script> 
+            
+                
+                
+                   <script src="./modules/gui/screens/controlscreen/widgtes/joggingwidget/module.js"></script> 
             
                 
                 
@@ -124,6 +158,8 @@
                 
                 
                    <script src="./modules/gui/screens/filesscreen/libs/jstree.js"></script> 
+                
+                   <script src="./modules/gui/screens/filesscreen/filemanager.js"></script> 
                 
                    <script src="./modules/gui/screens/filesscreen/module.js"></script> 
             
@@ -165,8 +201,23 @@
             
                 
                 
+                var printstatuswidget = new Printstatuswidget();
+                kernel.add_module( "printstatuswidget", printstatuswidget );
+            
+                
+                
                 var robot = new Robot();
                 kernel.add_module( "robot", robot );
+            
+                
+                
+                var temperaturecontrolwidget = new Temperaturecontrolwidget();
+                kernel.add_module( "temperaturecontrolwidget", temperaturecontrolwidget );
+            
+                
+                
+                var temperaturewidget = new Temperaturewidget();
+                kernel.add_module( "temperaturewidget", temperaturewidget );
             
                 
                 
@@ -175,13 +226,38 @@
             
                 
                 
+                var widgetcontroller = new Widgetcontroller();
+                kernel.add_module( "widgetcontroller", widgetcontroller );
+            
+                
+                
+                var consolewidget = new Consolewidget();
+                kernel.add_module( "consolewidget", consolewidget );
+            
+                
+                
                 var dropboxclient = new Dropboxclient();
                 kernel.add_module( "dropboxclient", dropboxclient );
             
                 
                 
+                var extrusionwidget = new Extrusionwidget();
+                kernel.add_module( "extrusionwidget", extrusionwidget );
+            
+                
+                
+                var fancontrolwidget = new Fancontrolwidget();
+                kernel.add_module( "fancontrolwidget", fancontrolwidget );
+            
+                
+                
                 var gui = new Gui();
                 kernel.add_module( "gui", gui );
+            
+                
+                
+                var joggingwidget = new Joggingwidget();
+                kernel.add_module( "joggingwidget", joggingwidget );
             
                 
                 
@@ -319,6 +395,39 @@
             
                  
             
+                
+                    <div id="printstatuswidget-status" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#printstatuswidget-status").load( "./modules/gui/screens/controlscreen/widgtes/printstatuswidget/assets/status.html" );
+                            </script> 
+                           printstatuswidget-status
+                         
+                    </div>
+                 
+            
+                 
+            
+                
+                    <div id="temperaturecontrolwidget-control" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#temperaturecontrolwidget-control").load( "./modules/gui/screens/controlscreen/widgtes/temperaturecontrolwidget/assets/control.html" );
+                            </script> 
+                           temperaturecontrolwidget-control
+                         
+                    </div>
+                 
+            
+                
+                    <div id="temperaturewidget-temperature" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#temperaturewidget-temperature").load( "./modules/gui/screens/controlscreen/widgtes/temperaturewidget/assets/temperature.html" );
+                            </script> 
+                           temperaturewidget-temperature
+                         
+                    </div>
                  
             
                  
@@ -326,12 +435,47 @@
                  
             
                 
-                    <div id="gui-navigation" class="wholescreen">
+                    <div id="consolewidget-console" class="wholescreen">
                         
                             <script type="text/javascript">
-                                $("#gui-navigation").load( "./modules/gui/core/navigation/assets/navigation.html" );
+                                $("#consolewidget-console").load( "./modules/gui/screens/controlscreen/widgtes/consolewidget/assets/console.html" );
                             </script> 
-                           gui-navigation
+                           consolewidget-console
+                         
+                    </div>
+                 
+            
+                 
+            
+                
+                    <div id="extrusionwidget-control" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#extrusionwidget-control").load( "./modules/gui/screens/controlscreen/widgtes/extrusionwidget/assets/control.html" );
+                            </script> 
+                           extrusionwidget-control
+                         
+                    </div>
+                 
+            
+                
+                    <div id="fancontrolwidget-control" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#fancontrolwidget-control").load( "./modules/gui/screens/controlscreen/widgtes/fancontrolwidget/assets/control.html" );
+                            </script> 
+                           fancontrolwidget-control
+                         
+                    </div>
+                 
+            
+                
+                    <div id="gui-body" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-body").load( "./modules/gui/assets/body.html" );
+                            </script> 
+                           gui-body
                          
                     </div>
                 
@@ -353,15 +497,6 @@
                          
                     </div>
                 
-                    <div id="gui-motion_panel" class="wholescreen">
-                        
-                            <script type="text/javascript">
-                                $("#gui-motion_panel").load( "./modules/gui/screens/machineconfigurationscreen/assets/motion_panel.html" );
-                            </script> 
-                           gui-motion_panel
-                         
-                    </div>
-                
                     <div id="gui-main" class="wholescreen">
                         
                             <script type="text/javascript">
@@ -371,12 +506,12 @@
                          
                     </div>
                 
-                    <div id="gui-wizard_calculator" class="wholescreen">
+                    <div id="gui-motion_panel" class="wholescreen">
                         
                             <script type="text/javascript">
-                                $("#gui-wizard_calculator").load( "./modules/gui/screens/machineconfigurationscreen/assets/wizard_calculator.html" );
+                                $("#gui-motion_panel").load( "./modules/gui/screens/machineconfigurationscreen/assets/motion_panel.html" );
                             </script> 
-                           gui-wizard_calculator
+                           gui-motion_panel
                          
                     </div>
                 
@@ -389,30 +524,12 @@
                          
                     </div>
                 
-                    <div id="gui-files" class="wholescreen">
+                    <div id="gui-wizard_calculator" class="wholescreen">
                         
                             <script type="text/javascript">
-                                $("#gui-files").load( "./modules/gui/screens/filesscreen/assets/files.html" );
+                                $("#gui-wizard_calculator").load( "./modules/gui/screens/machineconfigurationscreen/assets/wizard_calculator.html" );
                             </script> 
-                           gui-files
-                         
-                    </div>
-                
-                    <div id="gui-thumbnail" class="wholescreen">
-                        
-                            <script type="text/javascript">
-                                $("#gui-thumbnail").load( "./modules/gui/screens/explorescreen/assets/thumbnail.html" );
-                            </script> 
-                           gui-thumbnail
-                         
-                    </div>
-                
-                    <div id="gui-explore" class="wholescreen">
-                        
-                            <script type="text/javascript">
-                                $("#gui-explore").load( "./modules/gui/screens/explorescreen/assets/explore.html" );
-                            </script> 
-                           gui-explore
+                           gui-wizard_calculator
                          
                     </div>
                 
@@ -425,12 +542,113 @@
                          
                     </div>
                 
-                    <div id="gui-body" class="wholescreen">
+                    <div id="gui-control" class="wholescreen">
                         
                             <script type="text/javascript">
-                                $("#gui-body").load( "./modules/gui/assets/body.html" );
+                                $("#gui-control").load( "./modules/gui/screens/controlscreen/widgtes/extrusionwidget/assets/control.html" );
                             </script> 
-                           gui-body
+                           gui-control
+                         
+                    </div>
+                
+                    <div id="gui-status" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-status").load( "./modules/gui/screens/controlscreen/widgtes/printstatuswidget/assets/status.html" );
+                            </script> 
+                           gui-status
+                         
+                    </div>
+                
+                    <div id="gui-console" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-console").load( "./modules/gui/screens/controlscreen/widgtes/consolewidget/assets/console.html" );
+                            </script> 
+                           gui-console
+                         
+                    </div>
+                
+                    <div id="gui-temperature" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-temperature").load( "./modules/gui/screens/controlscreen/widgtes/temperaturewidget/assets/temperature.html" );
+                            </script> 
+                           gui-temperature
+                         
+                    </div>
+                
+                    <div id="gui-control" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-control").load( "./modules/gui/screens/controlscreen/widgtes/temperaturecontrolwidget/assets/control.html" );
+                            </script> 
+                           gui-control
+                         
+                    </div>
+                
+                    <div id="gui-control" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-control").load( "./modules/gui/screens/controlscreen/widgtes/joggingwidget/assets/control.html" );
+                            </script> 
+                           gui-control
+                         
+                    </div>
+                
+                    <div id="gui-control" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-control").load( "./modules/gui/screens/controlscreen/widgtes/fancontrolwidget/assets/control.html" );
+                            </script> 
+                           gui-control
+                         
+                    </div>
+                
+                    <div id="gui-explore" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-explore").load( "./modules/gui/screens/explorescreen/assets/explore.html" );
+                            </script> 
+                           gui-explore
+                         
+                    </div>
+                
+                    <div id="gui-thumbnail" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-thumbnail").load( "./modules/gui/screens/explorescreen/assets/thumbnail.html" );
+                            </script> 
+                           gui-thumbnail
+                         
+                    </div>
+                
+                    <div id="gui-files" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-files").load( "./modules/gui/screens/filesscreen/assets/files.html" );
+                            </script> 
+                           gui-files
+                         
+                    </div>
+                
+                    <div id="gui-navigation" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#gui-navigation").load( "./modules/gui/core/navigation/assets/navigation.html" );
+                            </script> 
+                           gui-navigation
+                         
+                    </div>
+                 
+            
+                
+                    <div id="joggingwidget-control" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#joggingwidget-control").load( "./modules/gui/screens/controlscreen/widgtes/joggingwidget/assets/control.html" );
+                            </script> 
+                           joggingwidget-control
                          
                     </div>
                  
@@ -468,17 +686,71 @@
                            controlscreen-control
                          
                     </div>
-                 
-            
                 
-                    <div id="explorescreen-thumbnail" class="wholescreen">
+                    <div id="controlscreen-control" class="wholescreen">
                         
                             <script type="text/javascript">
-                                $("#explorescreen-thumbnail").load( "./modules/gui/screens/explorescreen/assets/thumbnail.html" );
+                                $("#controlscreen-control").load( "./modules/gui/screens/controlscreen/widgtes/extrusionwidget/assets/control.html" );
                             </script> 
-                           explorescreen-thumbnail
+                           controlscreen-control
                          
                     </div>
+                
+                    <div id="controlscreen-status" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#controlscreen-status").load( "./modules/gui/screens/controlscreen/widgtes/printstatuswidget/assets/status.html" );
+                            </script> 
+                           controlscreen-status
+                         
+                    </div>
+                
+                    <div id="controlscreen-console" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#controlscreen-console").load( "./modules/gui/screens/controlscreen/widgtes/consolewidget/assets/console.html" );
+                            </script> 
+                           controlscreen-console
+                         
+                    </div>
+                
+                    <div id="controlscreen-temperature" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#controlscreen-temperature").load( "./modules/gui/screens/controlscreen/widgtes/temperaturewidget/assets/temperature.html" );
+                            </script> 
+                           controlscreen-temperature
+                         
+                    </div>
+                
+                    <div id="controlscreen-control" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#controlscreen-control").load( "./modules/gui/screens/controlscreen/widgtes/temperaturecontrolwidget/assets/control.html" );
+                            </script> 
+                           controlscreen-control
+                         
+                    </div>
+                
+                    <div id="controlscreen-control" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#controlscreen-control").load( "./modules/gui/screens/controlscreen/widgtes/joggingwidget/assets/control.html" );
+                            </script> 
+                           controlscreen-control
+                         
+                    </div>
+                
+                    <div id="controlscreen-control" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#controlscreen-control").load( "./modules/gui/screens/controlscreen/widgtes/fancontrolwidget/assets/control.html" );
+                            </script> 
+                           controlscreen-control
+                         
+                    </div>
+                 
+            
                 
                     <div id="explorescreen-explore" class="wholescreen">
                         
@@ -486,6 +758,15 @@
                                 $("#explorescreen-explore").load( "./modules/gui/screens/explorescreen/assets/explore.html" );
                             </script> 
                            explorescreen-explore
+                         
+                    </div>
+                
+                    <div id="explorescreen-thumbnail" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#explorescreen-thumbnail").load( "./modules/gui/screens/explorescreen/assets/thumbnail.html" );
+                            </script> 
+                           explorescreen-thumbnail
                          
                     </div>
                  
@@ -502,15 +783,6 @@
                  
             
                 
-                    <div id="machineconfigurationscreen-motion_panel" class="wholescreen">
-                        
-                            <script type="text/javascript">
-                                $("#machineconfigurationscreen-motion_panel").load( "./modules/gui/screens/machineconfigurationscreen/assets/motion_panel.html" );
-                            </script> 
-                           machineconfigurationscreen-motion_panel
-                         
-                    </div>
-                
                     <div id="machineconfigurationscreen-main" class="wholescreen">
                         
                             <script type="text/javascript">
@@ -520,12 +792,12 @@
                          
                     </div>
                 
-                    <div id="machineconfigurationscreen-wizard_calculator" class="wholescreen">
+                    <div id="machineconfigurationscreen-motion_panel" class="wholescreen">
                         
                             <script type="text/javascript">
-                                $("#machineconfigurationscreen-wizard_calculator").load( "./modules/gui/screens/machineconfigurationscreen/assets/wizard_calculator.html" );
+                                $("#machineconfigurationscreen-motion_panel").load( "./modules/gui/screens/machineconfigurationscreen/assets/motion_panel.html" );
                             </script> 
-                           machineconfigurationscreen-wizard_calculator
+                           machineconfigurationscreen-motion_panel
                          
                     </div>
                 
@@ -535,6 +807,15 @@
                                 $("#machineconfigurationscreen-basic_panel").load( "./modules/gui/screens/machineconfigurationscreen/assets/basic_panel.html" );
                             </script> 
                            machineconfigurationscreen-basic_panel
+                         
+                    </div>
+                
+                    <div id="machineconfigurationscreen-wizard_calculator" class="wholescreen">
+                        
+                            <script type="text/javascript">
+                                $("#machineconfigurationscreen-wizard_calculator").load( "./modules/gui/screens/machineconfigurationscreen/assets/wizard_calculator.html" );
+                            </script> 
+                           machineconfigurationscreen-wizard_calculator
                          
                     </div>
                  

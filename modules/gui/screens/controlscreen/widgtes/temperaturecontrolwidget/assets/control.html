@@ -1,0 +1,42 @@
+<div class='panel panel-primary' data-row="3" data-col="6" data-sizex="2" data-sizey="1">
+    <div class="panel-heading">Temperature Control</div>
+    <div class="panel-body">
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2">Hotend</span>
+            <input type="number" class="form-control" id="extruder_temperature_input">
+            <span class="input-group-addon" id="sizing-addon2">°C</span>
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default" id="set_extruder_temperature">Set</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <!-- <li><a>190°C (PLA)</a></li>
+                    <li><a>230°C (ABS)</a></li>
+                    <li class="divider"></li> -->
+                    <li><a id="extruder_heat_off">Off</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="input-group" id="bed_temp_input">
+            <span class="input-group-addon" id="sizing-addon2">Bed</span>
+            <input type="number" class="form-control" id="bed_temperature_input">
+            <span class="input-group-addon" id="sizing-addon2">°C</span>
+            
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default" id="set_bed_temperature">Set</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <!-- <li><a>45°C (PLA)</a></li>
+                    <li><a>100°C (ABS)</a></li>
+                    <li class="divider"></li> -->
+                    <li><a id="bed_heat_off">Off</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

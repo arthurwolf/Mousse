@@ -8,7 +8,7 @@ var Machineconfiguration = new Class({
     get_configuration: function(){
         // Retrieve the configuration from the machine, parse it and store it
         this.parent_machine.interface.get_file({
-            file: "/sd/config", 
+            file: "/sd/config.", 
             done: this.parse_config_file,
             caller: this    
         });

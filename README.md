@@ -1,7 +1,7 @@
 Mousse
 ======
 
-Mousse is a project for a Web-based control interface for CNC machines ( 3D printers, laser cutters, CNC mills etc )
+Mousse is a project for a Web-based control interface for CNC machines ( 3D printers, laser cutters, CNC mills, etc )
 
 This is initially intended to be used with Smoothieboard using it's on-board Ethernet connector. However, future plans include support for other boards, and an executable serving the interface.
 
@@ -9,10 +9,10 @@ This is initially intended to be used with Smoothieboard using it's on-board Eth
 
 ## Project goals
 
-* Universal controller interface for 3D printers, Lasers and CNC mills
+* Universal controller interface for 3D printers, Lasers, and CNC mills
 * Incorporate design tools and G-Code generation
-* Oriented towards easy use and ergonomy
-* Ability to fully redegin/configure the interface, and design vendor-specific interfaces
+* Oriented towards ease of use and ergonomy
+* Ability to fully redesign/configure the interface, and design vendor-specific interfaces
 * Wizards for everything
 * Fully modular code ( on the model of the Smoothie firmware ) to make it as easy as possible to contribute
 * Dashboard
@@ -46,4 +46,3 @@ GPL v3
 Contact the Smoothie community or wolf.arthur@gmail.com
 
 Contributions are very welcome !
-

@@ -32,7 +32,7 @@ var Basicconfigurationpanel = Class({
         // Save the machine_name value if changed 
         $("#save_machine_name").click(function(machine){
             return function(){
-                machine.configuration.set_value( "machine_name", $("#machine_name").val(), function( result ){
+                machine.configuration.set_value( "machine_name", $("#machine_name").val() + "\t# used for labels in Mousse", function( result ){
                     $("#machine_name_placard").tooltip({
                         delay: {hide: 5000}, 
                         placement: 'right',

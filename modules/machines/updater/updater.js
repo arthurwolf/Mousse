@@ -80,8 +80,18 @@ var Machineupdater = new Class({
             result.progress.playing = false;
         }else{
             result.progress.playing = true;
+            result.progress.percent_complete = result.progress.string.match(/[^%]*/i)[0].replace(/\s/g, '')+"%";
+            
+            // Get the seconds and convert them to HH:MM:SS
+            var time_elapsed = result.progress.string.split("elapsed time:").pop().split("s").shift().replace(/ /g, '');
+            var estimated_time = result.progress.string.split("est time:").pop().split("s").shift().replace(/ /g, '');
+            var time = new Date(null);
+            time.setSeconds(time_elapsed)
+            result.progress.time_elapsed = time.toISOString().substr(11, 8);
+            time.setSeconds(estimated_time-time_elapsed);
+            result.progress.est_time = time.toISOString().substr(11, 8);    
         }
-
+        
         // We have extracted all the info we need, we can call the event to inform all modules interrested of the information we found
         kernel.call_event("on_value_update", result);
 

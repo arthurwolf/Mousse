@@ -1,0 +1,6 @@
+{
+    "Authors": "",
+    "Version": "projectversion",
+    "Requires" : ["module","machines"]
+}
+

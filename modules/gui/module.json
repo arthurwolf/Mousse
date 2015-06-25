@@ -2,7 +2,7 @@
     "Authors": "",
     "Version": "projectversion",
     "Requires" : ["module","machines","updater"],
-    "Include": ["libs/bootstrap/js/bootstrap.js", "libs/fuelux/js/fuelux.js", "libs/bootstrap/js/bootstrap-modalmanager.js", "libs/bootstrap/js/bootstrap-modal.js", "libs/validator.js" ],
+    "Include": ["libs/bootstrap/js/bootstrap.js", "libs/fuelux/js/fuelux.js", "libs/bootstrap/js/bootstrap-modalmanager.js", "libs/bootstrap/js/bootstrap-modal.js", "libs/validator.js", "libs/bootbox/js/bootbox.min.js" ],
     "IncludeCSS": ["libs/bootstrap/css/bootstrap.css", "libs/fuelux/css/fuelux.css", "libs/bootstrap/css/bootstrap-theme.css", "libs/bootstrap/css/bootstrap-modal-bs3patch.css", "libs/bootstrap/css/bootstrap-modal.css"],
 }
 

@@ -1,0 +1,48 @@
+<div class='panel panel-primary' data-row="2" data-col="2" data-sizex="2" data-sizey="2">
+    <div class="panel-heading"><span class="glyphicon glyphicon-move" aria-hidden="true"></span>Jogging Control</div>
+    <div class="panel-body">
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" aria-expanded="false" id="negative_x">-X</button>
+            <button type="button" class="btn btn-default" aria-expanded="false" id="home_x">Home X</button>
+            <button type="button" class="btn btn-default" aria-expanded="false" id="positive_x">+X</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" aria-expanded="false" id="negative_y">-Y</button>
+            <button type="button" class="btn btn-default" aria-expanded="false" id="home_y">Home Y</button>
+            <button type="button" class="btn btn-default" aria-expanded="false" id="positive_y">+Y</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" aria-expanded="false" id="negative_z">-Z</button>
+            <button type="button" class="btn btn-default" aria-expanded="false" id="home_z">Home Z</button>
+            <button type="button" class="btn btn-default" aria-expanded="false" id="positive_z">+Z</button>
+        </div>
+        <div>
+            <button type="button" class="btn btn-default" aria-expanded="false" id="home_all">Home all</button>
+            <button type="button" class="btn btn-default" aria-expanded="false" id="motors_off">Motors off</button>
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-default">
+                    <input type="radio" name="jogging_increments" id="jogging_increment_0.1" value="0.1"> 0.1
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" name="jogging_increments" id="jogging_increment_1" value="1"> 1
+                </label>
+                <label class="btn btn-default active">
+                    <input type="radio" name="jogging_increments" id="jogging_increment_10" value="10"> 10
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" name="jogging_increments" id="jogging_increment_100" value="100"> 100
+                </label>
+            </div>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2">XY</span>
+            <input type="number" class="form-control" value="3000" aria-describedby="sizing-addon2" id="xy_velocity">
+            <span class="input-group-addon" id="sizing-addon2">mm/min</span>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2">Z</span>
+            <input type="number" class="form-control" value="200" aria-describedby="sizing-addon2" id="z_velocity">
+            <span class="input-group-addon" id="sizing-addon2">mm/min</span>
+        </div>
+    </div>
+</div>

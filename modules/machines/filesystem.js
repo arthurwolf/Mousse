@@ -1,6 +1,9 @@
 // This object retrieves a list of files from a machine, and stores it
 var Machinefilesystem = new Class({
 
+    // TODO
+    // replace ip address with machine name if available
+
     create: function( machine ){
         this.parent_machine = machine;
     },

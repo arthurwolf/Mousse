@@ -65,46 +65,68 @@ var Controlscreen = Module.extend({
         // For each machine
         for( var index in kernel.machines ){
             var current = kernel.machines[index]; 
-
+            
             // Create a new tab
-            var tab = $("<li><a href='#'>" + current.ip + "</a></li>");
+            // Check if the machine has a name to be used in place of its IP address
+            if(typeof current.configuration.machine_name !== "undefined"){
+                var tab = $("<li><a href='#' id='machineindex_" + index.toString() + "'>" + current.configuration.machine_name + "</a></li>");
+            }else {
+                var tab = $("<li><a href='#' id='machineindex_" + index.toString() + "'>" + current.ip + "</a></li>");
+            }
 
             // Display selected and unselected differently
             if( current === this.selected_machine ){ tab.addClass('active'); }
       
-            // We open the folder if the link is clicked 
+            // We open the folder if the link is clicked
+            var _that = this;
             tab.click(function(machine, screen){
                 return function(){
-                    screen.select_new_machine_tab( machine ); 
+                    $(this).tab("show");
+                    // Get the index of the machine that the user selected
+                    var machine_index = parseInt($(this).find("a").attr("id").split("_")[1]);
+                    _that.select_new_machine_tab(kernel.machines[machine_index]);
                 }; 
             }(machine, this));
             
             // Append to the list 
             tab.appendTo("#control_machine_list");
-
         } 
-
         // Display this machine's interface
         this.display_control_interface( machine );
-    
     },
 
     // Display the full machine interface
     display_control_interface: function( machine ){
-        console.log("test");
-        $(".gridster").gridster({
-            widget_margins: [10, 10],
-            widget_base_dimensions: [140, 140],
-            widget_selector: "div",
-            draggable: {
-                handle: "div .panel-heading",
-            },
-            resize: {
-                enabled: true,
-            }
-        });
+        // Initialize the grid for thr configurable the interface
+        this.gridster = $(".gridster").gridster({
+                        widget_margins: [10, 10],
+                        widget_base_dimensions: [140, 140],
+                        widget_selector: "div",
+                        
+                        draggable: {
+                            handle: "div .panel-heading",
+                            stop: function(event, ui) {    
+                             var positions = JSON.stringify(this.serialize());
+                             localStorage.setItem("widget_positions", positions);
+                             console.log("Dragged");
+                             }
+                        },
+                        
+                        resize: {
+                            enabled: false,
+                        }
+                    }).data("gridster");
+        // Empty all elements and widgets from the view
+        this.gridster.remove_all_widgets();
+        $("#widget_interface").empty();
+        // Populate the interface with control widgets
+        kernel.call_event("on_populate_control_screen", machine);
+    },
+    
+    // We were asked to add a widget
+    add_widget: function(widget){
+        this.gridster.add_widget(widget.html, widget.sizex, widget.sizey);
     }
-
 });
 
 

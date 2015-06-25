@@ -1,5 +1,7 @@
 var Networkdetect = Module.extend({
    
+   // TODO: before sending 'version' to the previously identified boards, check if a file is being played with 'progress' so we don't interrupt the file playing
+   
     on_module_loaded: function(){
         // Start a network scan, without forcing
         this.scan_all( false );
@@ -169,6 +171,3 @@ var Networkdetect = Module.extend({
         this.kernel.call_event('on_machine_discovered', {ip: ip, version: data});
     }
 });
-
-
-
